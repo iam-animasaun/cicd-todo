@@ -1,6 +1,6 @@
 FROM python:3
 
-RUN python3 -. venv /opt/venv
+RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin/:$PATH"
 RUN pip install django==3.2
 
