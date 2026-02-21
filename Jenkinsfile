@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout'){
            steps {
                 git credentialsId: '74d5e1dd-5e1a-43a5-88ae-4bfb72250565', 
-                url: 'https://github.com/iam-animasaun/cicd-todo.git',
+                url: 'git@github.com:iam-animasaun/cicd-todo.git',
                 branch: 'main'
            }
         }
@@ -41,7 +41,7 @@ pipeline {
         stage('Checkout K8S manifest SCM'){
             steps {
                 git credentialsId: '74d5e1dd-5e1a-43a5-88ae-4bfb72250565', 
-                url: 'https://github.com/iam-animasaun/cicd-todo.git',
+                url: 'git@github.com:iam-animasaun/cicd-todo.git',
                 branch: 'main'
             }
         }
@@ -58,7 +58,7 @@ pipeline {
                         git add deploy.yaml
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
                         git remote -v
-                        git push https://github.com/iam-animasaun/cicd-todo.git HEAD:main
+                        git push orgin HEAD:main
                         '''                        
                     }
                 }
