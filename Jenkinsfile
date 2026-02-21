@@ -32,7 +32,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push to Repo'
-                    docker push olatomiwa17/todo-app:${BUILD_NUMBER}
+                    docker push olatomiwa17/cicd-todo:${BUILD_NUMBER}
                     '''
                 }
             }
