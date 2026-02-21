@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.11-slim
 
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin/:$PATH" \
