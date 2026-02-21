@@ -40,7 +40,7 @@ pipeline {
         
         stage('Checkout K8S manifest SCM'){
             steps {
-                git credentialsId: 'f87a34a8-0e09-45e7-b9cf-6dc68feac670', 
+                git credentialsId: '74d5e1dd-5e1a-43a5-88ae-4bfb72250565', 
                 url: 'https://github.com/iam-animasaun/cicd-todo.git',
                 branch: 'main'
             }
@@ -51,6 +51,7 @@ pipeline {
                 script{
                     withCredentials([usernamePassword(credentialsId: '74d5e1dd-5e1a-43a5-88ae-4bfb72250565', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         sh '''
+			cd deploy
                         cat deploy.yaml
                         sed -i '' "s/32/${BUILD_NUMBER}/g" deploy.yaml
                         cat deploy.yaml
