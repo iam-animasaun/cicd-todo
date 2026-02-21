@@ -10,7 +10,7 @@ pipeline {
         
         stage('Checkout'){
            steps {
-                git credentialsId: 'github-ssh-key', 
+                git credentialsId: 'github_ssh_key', 
                 url: 'git@github.com:iam-animasaun/cicd-todo.git',
                 branch: 'main'
            }
