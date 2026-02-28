@@ -54,8 +54,9 @@ pipeline {
 			cd deploy
                         cat deploy.yaml
                         sed -i 's|image: olatomiwa17/cicd-todo:.*|image: olatomiwa17/cicd-todo:${BUILD_NUMBER}|g' deploy.yaml
+                        sed -i 's|image: olatomiwa17/cicd-todo:.*|image: olatomiwa17/cicd-todo:${BUILD_NUMBER}|g' pod.yaml
                         cat deploy.yaml
-                        git add deploy.yaml
+                        git add .
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
                         git remote -v
                         git push origin HEAD:main
