@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: todo
-    image: olatomiwa17/cicd-todo:${BUILD_NUMBER}
+    image: olatomiwa17/cicd-todo:37
     ports:
     - containerPort: 8000
