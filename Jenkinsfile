@@ -53,8 +53,8 @@ pipeline {
                         sh '''
 			cd deploy
                         cat deploy.yaml
-                        sed -i 's|image: olatomiwa17/cicd-todo:.*|image: olatomiwa17/cicd-todo:${BUILD_NUMBER}|g' deploy.yaml
-                        sed -i 's|image: olatomiwa17/cicd-todo:.*|image: olatomiwa17/cicd-todo:${BUILD_NUMBER}|g' pod.yaml
+                        sed -i "s|image: olatomiwa17/cicd-todo:.*|image: olatomiwa17/cicd-todo:${BUILD_NUMBER}|g" deploy.yaml
+                        sed -i "s|image: olatomiwa17/cicd-todo:.*|image: olatomiwa17/cicd-todo:${BUILD_NUMBER}|g" pod.yaml
                         cat deploy.yaml
                         git add .
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
