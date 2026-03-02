@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: olatomiwa17/cicd-todo:39
+        image: olatomiwa17/cicd-todo:40
         ports:
         - containerPort: 8000
